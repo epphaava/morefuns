@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+    <body>
+
+        <%- include('./partials/nav.ejs') %>
+
+            <div class="index content">
+
+                <h2>Indext content H2</h2>
+
+                <% if(posts.length> 0) { %>
+                    <% posts.forEach(post=> { %>
+
+
+
+                        <a href="/singlepost">
+                            <div class="post">
+                                <div class=post_header>
+                                    <div class="user">
+                                        <div class=icon>
+                                            <img src=<%=post.profile_pic_src %> alt="ProfilePic">
+                                        </div>
+                                        <div class="name">
+                                            <%= post.user %>
+                                        </div>
+                                    </div>
+                                    <div class="date">
+                                        <small>
+                                            <%= post.date %>
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="post_image">
+                                    <img src=<%=post.post_pic_src %> alt="PostPic">
+                                </div>
+                                <div class="post_text">
+                                    <%= post.post_title %>
+                                </div>
+                                <div class=thumb>
+                                    <img src="public/assets/thumbsup vol4.png" alt="Thumbs up">
+                                </div>
+                            </div>
+                            <% }) %>
+                                <% } %>
+            </div>
+            </a>
+
+            <%- include('./partials/footer.ejs') %>
+
+    </body>
+
+</html>

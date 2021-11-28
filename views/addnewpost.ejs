@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+
+<div class="create-post content">
+    <form>
+        <label for="title">User:</label>
+        <input type="text" id="user" required>
+        <label for="title">Post title:</label>
+        <input type="text" id="title" required>
+        <label for="snippet">Post picture src:</label>
+        <input type="text" id="snippet" required>
+        <button class="newPostButton">Submit</button>
+    </form>
+</div>
+<%- include('./partials/footer.ejs') %>
+
+</body>
+</html>
