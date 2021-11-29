@@ -173,3 +173,11 @@ footer{
 .newPostButton:hover {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
 }
+
+.not-found-content {
+  text-align: center;
+  color: #97D2FB;
+  text-shadow: 1.5px 1px #84c3f0;
+  ;
+
+}

@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- add header from partials -->
 <%- include('./partials/head.ejs') %>
 
     <body>
 
+        <!-- add navbar from partials -->
         <%- include('./partials/nav.ejs') %>
 
-            <div class="index content">
+            <div class="index-content">
 
                 <h2>Indext content H2</h2>
 
+                <!-- rn tegin lihtsalt constanti app.js-i ja tõmban sealt, idk kuidas need pildid korda saada haha-->
                 <% if(posts.length> 0) { %>
                     <% posts.forEach(post=> { %>
-
-
 
                         <a href="/singlepost">
                             <div class="post">
@@ -43,11 +44,12 @@
                                     <img src="public/assets/thumbsup vol4.png" alt="Thumbs up">
                                 </div>
                             </div>
-                            <% }) %>
-                                <% } %>
+                        </a>
+                        <% }) %>
+                            <% } %>
             </div>
-            </a>
 
+            <!-- add footer from partials -->
             <%- include('./partials/footer.ejs') %>
 
     </body>

@@ -1,15 +1,13 @@
 const express = require('express');
-const morgan = require('morgan');
 
 const app = express();
 
 //register view engine
 app.set('view engine', 'ejs');
-//if I want a folder different from views
-//app.set('views','myviews')
 
 app.listen(5000);
 
+// public/css to static
 app.use(express.static('public/css'));
 
 
@@ -45,7 +43,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/singlepost', (req, res) => {
-    //res.send('<p>about page</p>')
     res.render('singlepost', {title: 'Post'});
 });
 
