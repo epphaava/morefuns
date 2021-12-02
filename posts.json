@@ -1,0 +1,85 @@
+
+{
+    "posts": [
+        {
+            "user": "Juku",
+            "date": "18.01.2021",
+            "profile_pic_src": "./user.png",
+            "post_pic_src": "./moon.jpg",
+            "post_title": "lähen kooli !",
+            "likes": 0
+        },
+        {
+            "user": "Juku",
+            "date": "17.01.2021",
+            "profile_pic_src": "./user.png",
+            "post_pic_src": "./yoda.jpeg",
+            "post_title": "lähen kooli !",
+            "likes": 0
+        }, 
+        {
+            "user": "Aadu",
+            "date": "16.01.2021",
+            "profile_pic_src": "./user.png",
+            "post_pic_src": "./news.jpg",
+            "post_title": "oi kui põnev!",
+            "likes": 0
+        }, 
+        {
+            "user": "Juhan",
+            "date": "15.01.2021",
+            "profile_pic_src": "./user.png",
+            "post_pic_src": "./work.jpg",
+            "post_title": "oh, work is hard",
+            "likes": 0
+        },
+        {
+            "user": "Mari",
+            "date": "15.01.2021",
+            "profile_pic_src": "./user.png",
+            "post_pic_src": "./sunflower.jpeg",
+            "post_title": "pretty flower",
+            "likes": 0
+        },
+        {
+            "user": "Karin",
+            "date": "15.01.2021",
+            "profile_pic_src": "./user.png",
+            "post_pic_src": "./tiger.jpg",
+            "post_title": "that's scary",
+            "likes": 0
+        },
+        {
+            "user": "Juhan",
+            "date": "15.01.2021",
+            "profile_pic_src": "./user.png",
+            "post_pic_src": "./brightside.jpg",
+            "post_title": "deep",
+            "likes": 0
+        },
+        {
+            "user": "Aadu",
+            "date": "15.01.2021",
+            "profile_pic_src": "./user.png",
+            "post_pic_src": "./france.jpg",
+            "post_title": "nice trip",
+            "likes": 0
+        },
+        {
+            "user": "Mari",
+            "date": "15.01.2021",
+            "profile_pic_src": "./user.png",
+            "post_pic_src": "./proposal.jpeg",
+            "post_title": "so happy!",
+            "likes": 0
+        }, 
+        {
+            "user": "Karin",
+            "date": "15.01.2021",
+            "profile_pic_src": "./user.png",
+            "post_pic_src": "./colors.jpg",
+            "post_title": "this is pretty",
+            "likes": 0
+        }
+    ]
+}

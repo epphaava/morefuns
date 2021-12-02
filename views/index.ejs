@@ -18,7 +18,7 @@
                 <% if(posts.length> 0) { %>
                     <% posts.forEach(post=> { %>
 
-                        <a href="/singlepost">
+                        <a href="/singlepost/<%=post.id%>">
                             <div class="post">
                                 <div class=post_header>
                                     <div class="user">
@@ -26,7 +26,7 @@
                                             <img src=<%= post.profile_pic_src %> alt="ProfilePic">
                                         </div>
                                         <div class="name">
-                                            <%= post.user %>
+                                            <%= post.usr %>
                                         </div>
                                     </div>
                                     <div class="date">
