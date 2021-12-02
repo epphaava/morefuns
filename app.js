@@ -38,7 +38,7 @@ app.get('/posts', async(req, res) => {
     }
    });
 
-   /*
+   
 
 app.get('/', (req, res) => {
 
@@ -70,7 +70,7 @@ app.get('/', (req, res) => {
     ]
     res.render('index', {title: 'Home', posts});
 });
-*/
+
 
 app.get('/singlepost', (req, res) => {
     res.render('singlepost', {title: 'Post'});
