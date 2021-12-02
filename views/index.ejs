@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" href="../public/css/styles.css">
 
 <!-- add header from partials -->
 <%- include('./partials/head.ejs') %>
@@ -22,7 +23,7 @@
                                 <div class=post_header>
                                     <div class="user">
                                         <div class=icon>
-                                            <img src=<%=post.profile_pic_src %> alt="ProfilePic">
+                                            <img src=<%= post.profile_pic_src %> alt="ProfilePic">
                                         </div>
                                         <div class="name">
                                             <%= post.user %>
