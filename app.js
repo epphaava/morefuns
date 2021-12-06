@@ -22,6 +22,7 @@ app.get('/', async (req, res) => {
         const posts = await pool.query(
             "SELECT * FROM posts"
         );
+        console.log(posts.rows);
         res.render('index', { title: 'Home', posts: posts.rows });
 
     } catch (err) {
@@ -35,12 +36,13 @@ app.get('/', async (req, res) => {
 app.get('/singlepost/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        console.log("get a post request has arrived");
-        console.log(req.params);
+        console.log(id);
+        //console.log("get a post request has arrived");
         const posts = await pool.query(
             "SELECT * FROM posts WHERE id = $1", [id]
         );
-        console.log(posts.rows[0])
+        //console.log(posts.rows[0])
+        //console.log(posts.rows);
         res.render('singlepost', { title: 'Post', posts: posts.rows[0] });
 
         //res.json(posts.rows[0]);
