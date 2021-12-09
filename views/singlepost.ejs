@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head.ejs') %>
+<%- include('./partials/head.ejs') %>
 
-<body>
-    <%- include('./partials/nav.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
 
 
-<div class="singlepost content">
+            <div class="singlepost content">
 
-            <div class="post">
-                <div class=post_header>
-                    <div class="user">
-                        <div class=icon>
-                            <img src=<%= posts.profile_pic_src %> alt="ProfilePic">
+                <div class="post">
+                    <div class=post_header>
+                        <div class="user">
+                            <div class=icon>
+                                <img src=<%=posts.profile_pic_src %> alt="ProfilePic">
+                            </div>
+                            <div class="name">
+                                <%= posts.usr %>
+                            </div>
                         </div>
-                        <div class="name">
-                            <%= posts.usr %>
+                        <div class="date">
+                            <small>
+                                <%= posts.date %>
+                            </small>
                         </div>
                     </div>
-                    <div class="date">
-                        <small>
-                            <%= posts.date %>
-                        </small>
+                    <div class="post_image">
+                        <img src=<%=posts.post_pic_src %> alt="PostPic">
                     </div>
-                </div>
-                <div class="post_image">
-                    <img src=<%=posts.post_pic_src %> alt="PostPic">
-                </div>
-                <div class="post_text">
-                    <%= posts.post_title %>
-                </div>
-                <div class=thumb>
-                    <img src="https://i.ibb.co/S3M17RH/thumbsup-vol4.png" alt="Thumbs up">
+                    <div class="post_text">
+                        <%= posts.post_title %>
+                    </div>
+                    <div class=thumb>
+                        <img src="https://i.ibb.co/S3M17RH/thumbsup-vol4.png" alt="Thumbs up">
+
+                        <a class="delete" data-del="<%=posts.id%>">
+                            <button
+                            style="background-color: rgba(255, 255, 255, 0.9);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue "
+                                class="bi bi-trash">
+                                <path
+                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                <path fill-rule="evenodd"
+                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                            </svg>
+                        </button>
+                    </a>
+
+                    </div>
                 </div>
             </div>
-    </div>
-<%- include('./partials/footer.ejs') %>
+            <script>
+                
+                const delreq = document.querySelector('a.delete');
+                delreq.addEventListener('click', (e) => {
+                    console.log(delreq.dataset.del);
+                    const idd = delreq.dataset.del;
+                    const endpoint = `/singlepost/${idd}`;
+                    console.log(endpoint)
+                    fetch(endpoint, {
+                        method: 'DELETE'
+                    })//.then(window.location.href = '/')
+                });
+            </script>
 
-</body>
+            <%- include('./partials/footer.ejs') %>
+
+    </body>
+
 </html>

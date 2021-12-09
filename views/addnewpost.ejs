@@ -6,18 +6,20 @@
     <%- include('./partials/nav.ejs') %>
 
 
-<div class="create-post content">
-    <form>
-        <label for="title">User:</label>
-        <input type="text" id="user" required>
-        <label for="title">Post title:</label>
-        <input type="text" id="title" required>
-        <label for="snippet">Post picture src:</label>
-        <input type="text" id="snippet" required>
-        <button class="newPostButton">Submit</button>
+    <br>
+    <div class="create-post">
+    <form action="/posts" method="POST">
+    <label for="usr">User:</label>
+    <input type="text" id="usr" name="usr" required><br><br>
+    <label for="post_title">Post title:</label>
+    <input type="text" id="post_title" name="post_title" required><br><br>
+    <label for="post_pic_src"> URL link:</label>
+    <input type="text" id="post_pic_src" name="post_pic_src"></textarea><br><br>
+    <button>Submit</button>
     </form>
-</div>
-<%- include('./partials/footer.ejs') %>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+   
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 const express = require('express');
 const pool = require('./database');
+const cors = require('cors')
 
 
 const app = express();
@@ -14,6 +15,7 @@ app.listen(3000);
 // public/css to static
 app.use(express.static('public/css'));
 app.use(express.static('public/assets'));
+app.use(cors());
 
 
 app.get('/', async (req, res) => {
@@ -52,6 +54,23 @@ app.get('/singlepost/:id', async (req, res) => {
     }
 });
 
+app.post('/posts', async(req, res) => {
+    try {
+    const post = req.body;
+    post['profile_pic_src'] = 'https://i.ibb.co/qFYpX2L/user.png';
+    post['date'] = new Date().toISOString().slice(0, 10);
+    post['likes'] = 0;
+    console.log(post);
+    const newpost = await pool.query(
+    "INSERT INTO posts(usr, profile_pic_src, post_pic_src, post_title, date, likes) values ($1, $2, $3, $4, $5, $6) RETURNING*", [post.usr, post.profile_pic_src, post.post_pic_src, post.post_title, post.date, post.likes]
+    );
+
+    res.redirect('/');
+    } catch (err) {
+    console.error(err.message)
+    }
+   });
+   
 
 app.get('/addnewpost', (req, res) => {
     res.render('addnewpost', { title: 'Create new post' });
@@ -61,3 +80,21 @@ app.get('/addnewpost', (req, res) => {
 app.use((req, res) => {
     res.status(404).render('404', { title: '404' })
 });
+
+app.delete('/singlepost/:id', async(req, res) => {
+    console.log('enne proovi')
+    try {
+    console.log('wriuhgiwrs');
+    console.log("params:")
+    console.log(req.params);
+    const id = req.params.id;
+    const post = req.body;
+    console.log("delete a post request has arrived");
+    const deletepost = await pool.query(
+    "DELETE FROM posts WHERE id = $1", [id]
+    );
+    //res.redirect('/');
+    } catch (err) {
+    console.error(err.message);
+    }
+   });

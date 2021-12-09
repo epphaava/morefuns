@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="../public/css/styles.css">
+<link rel="stylesheet" href="styles.css">
 
 <!-- add header from partials -->
 <%- include('./partials/head.ejs') %>
@@ -14,16 +14,18 @@
 
                 <h2>Indext content H2</h2>
 
-                <!-- rn tegin lihtsalt constanti app.js-i ja tõmban sealt, idk kuidas need pildid korda saada haha-->
                 <% if(posts.length> 0) { %>
                     <% posts.forEach(post=> { %>
 
-                        <a href="/singlepost/<%=post.id%>">
-                            <div class="post">
+                        <div class="post">
+                            
+                            <a href="/singlepost/<%=post.id%>">
+
                                 <div class=post_header>
+
                                     <div class="user">
                                         <div class=icon>
-                                            <img src=<%= post.profile_pic_src %> alt="ProfilePic">
+                                            <img src=<%=post.profile_pic_src %> alt="ProfilePic">
                                         </div>
                                         <div class="name">
                                             <%= post.usr %>
@@ -37,22 +39,23 @@
                                 </div>
                             </a>
 
-                                <div class="post_image">
-                                    <img src=<%=post.post_pic_src %> alt="PostPic">
-                                </div>
-                                <div class="post_text">
-                                    <%= post.post_title %>
-                                </div>
-                                <div class=thumb>
-                                    <img src="https://i.ibb.co/S3M17RH/thumbsup-vol4.png" alt="Thumbs up">
-                                </div>
-                            </div>
-                        <% }) %>
-                            <% } %>
-            </div>
+                        <div class="post_image">
+                            <img src=<%=post.post_pic_src %> alt="PostPic">
+                        </div>
+                        <div class="post_title">
+                            <%= post.post_title %>
+                        </div>
+                        <div class=thumb>
+                            <img src="https://i.ibb.co/S3M17RH/thumbsup-vol4.png" alt="Thumbs up">
 
-            <!-- add footer from partials -->
-            <%- include('./partials/footer.ejs') %>
+                        </div>
+            </div>
+            <% }) %>
+                <% } %>
+                    </div>
+
+                    <!-- add footer from partials -->
+                    <%- include('./partials/footer.ejs') %>
 
     </body>
 

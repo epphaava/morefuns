@@ -79,6 +79,10 @@ nav {
 .post:link {
   text-decoration: none;
 }
+
+a {
+  color: black;
+}
 .post_header{
   display: flex;
   align-items: center;
@@ -100,6 +104,12 @@ nav {
 .icon img:hover {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
 }
+
+.thumb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .date {
   float: right;
   margin: 2%;
@@ -111,7 +121,7 @@ nav {
 .post_image img {
   width: 100%;
 }
-.post_text {
+.post_title {
   margin: 3%;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
@@ -181,3 +191,24 @@ footer{
   ;
 
 }
+
+.btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: 1px solid lighten(gray, 24%);
+  height: 48px;
+  padding: 0 24px 0 16px;
+  letter-spacing: .25px;
+  border-radius: 24px;
+  cursor: pointer;}
+ 
+  .mdi {
+    margin-right: 8px;
+  }
+
+.btn-delete {
+  font-size: 16px;
+  color: red;
+
+  }
