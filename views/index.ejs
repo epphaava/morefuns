@@ -12,13 +12,12 @@
 
             <div class="index-content">
 
-                <h2>Indext content H2</h2>
 
                 <% if(posts.length> 0) { %>
-                    <% posts.forEach(post=> { %>
+                    <% posts.reverse().forEach(post=> { %>
 
                         <div class="post">
-                            
+
                             <a href="/singlepost/<%=post.id%>">
 
                                 <div class=post_header>
@@ -39,23 +38,33 @@
                                 </div>
                             </a>
 
-                        <div class="post_image">
-                            <img src=<%=post.post_pic_src %> alt="PostPic">
-                        </div>
-                        <div class="post_title">
-                            <%= post.post_title %>
-                        </div>
-                        <div class=thumb>
-                            <img src="https://i.ibb.co/S3M17RH/thumbsup-vol4.png" alt="Thumbs up">
+                            <div class="post_image">
+                                <img src=<%=post.post_pic_src %> alt="PostPic">
+                            </div>
+                            <div class="post_title">
+                                <%= post.post_title %>
+                            </div>
+                            <div class=thumb>
+                                <img src="https://i.ibb.co/S3M17RH/thumbsup-vol4.png" alt="Thumbs up">
+                                <label class="like_count">
+                                    
+                                </label>
 
+                            </div>
                         </div>
+                        <% }) %>
+                    <% }  else { %>
+                        <div class="not-found-content">
+                        <h2>
+                            You have not posted anything yet!
+                        </h2>
+                        </div>
+                        <% } %>
+
             </div>
-            <% }) %>
-                <% } %>
-                    </div>
 
-                    <!-- add footer from partials -->
-                    <%- include('./partials/footer.ejs') %>
+            <!-- add footer from partials -->
+            <%- include('./partials/footer.ejs') %>
 
     </body>
 

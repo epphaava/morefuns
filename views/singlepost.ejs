@@ -27,7 +27,7 @@
                     <div class="post_image">
                         <img src=<%=posts.post_pic_src %> alt="PostPic">
                     </div>
-                    <div class="post_text">
+                    <div class="post_title">
                         <%= posts.post_title %>
                     </div>
                     <div class=thumb>
@@ -59,7 +59,7 @@
                     console.log(endpoint)
                     fetch(endpoint, {
                         method: 'DELETE'
-                    })//.then(window.location.href = '/')
+                    }).then(window.location.href = '/')
                 });
             </script>
 

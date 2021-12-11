@@ -110,6 +110,10 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+
+.like_count {
+}
+
 .date {
   float: right;
   margin: 2%;
