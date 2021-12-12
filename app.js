@@ -81,6 +81,19 @@ app.post('/posts', async (req, res) => {
     }
 });
 
+app.put('/:id', async(req, res) => {
+    try {
+    const { id } = req.params;
+    console.log("update request has arrived");
+    const updatepost = await pool.query(
+    "UPDATE posts SET likes = likes+1 WHERE id = $1", [id]);
+    const updatepost2 = await pool.query(
+        "UPDATE posts SET disabled = 'disabled' WHERE id = $1", [id]);
+    res.json(post);
+    } catch (err) {
+    console.error(err.message);
+    }
+   });
 
 app.get('/addnewpost', (req, res) => {
     res.render('addnewpost', { title: 'Create new post' });

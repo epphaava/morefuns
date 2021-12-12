@@ -108,11 +108,11 @@ a {
   justify-content: space-between;
 }
 
-.thumb img {
+.thumbimg {
   align-self: flex-start;
 }
 
-.likes {
+.thumb span {
   flex: 1 1 auto;
 }
 
@@ -132,14 +132,20 @@ a {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
 }
-.thumb input {
-  width: 10%;
-  background-color: #97D2FB;
-  border-radius: 50%;
-  margin: 3%;
-}
-.thumb input:hover {
+
+.thumbimg:hover {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+}
+.thumb button {
+  width: 10%;
+  margin: 3%;
+  border: 0ch;
+
+}
+
+.thumbimg {
+  width: 100%;
+  border-radius: 50%;
 }
 
 .create-post form{
