@@ -55,15 +55,11 @@ app.get('/singlepost/:id', async (req, res) => {
     try {
         const id = req.params.id;
         console.log(id);
-        //console.log("get a post request has arrived");
         const posts = await pool.query(
             "SELECT * FROM posts WHERE id = $1", [id]
         );
-        //console.log(posts.rows[0])
-        //console.log(posts.rows);
-        res.render('singlepost', { title: 'Post', posts: posts.rows[0] });
 
-        //res.json(posts.rows[0]);
+        res.render('singlepost', { title: 'Post', posts: posts.rows[0] });
     } catch (err) {
         console.error(err.message);
 
@@ -75,12 +71,10 @@ app.post('/posts', async (req, res) => {
         const post = req.body;
         post['profile_pic_src'] = 'https://i.ibb.co/qFYpX2L/user.png';
         post['date'] = new Date().toISOString().slice(0, 10);
-        post['likes'] = 0;
         console.log(post);
         const newpost = await pool.query(
             "INSERT INTO posts(usr, profile_pic_src, post_pic_src, post_title, date, likes) values ($1, $2, $3, $4, $5, $6) RETURNING*", [post.usr, post.profile_pic_src, post.post_pic_src, post.post_title, post.date, post.likes]
         );
-
         res.redirect('/');
     } catch (err) {
         console.error(err.message)

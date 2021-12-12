@@ -45,7 +45,10 @@
                                 <%= post.post_title %>
                             </div>
                             <div class=thumb>
-                                <img src="https://i.ibb.co/S3M17RH/thumbsup-vol4.png" alt="Thumbs up">
+                                <input id="likebtn" type="image" src="https://i.ibb.co/S3M17RH/thumbsup-vol4.png" alt="Thumbs up">
+                                <p class="likes">
+                                    <%= post.likes %>
+                                </p>
                             </div>
 
                         </div>
@@ -62,6 +65,15 @@
 
             <!-- add footer from partials -->
             <%- include('./partials/footer.ejs') %>
+
+                <script>
+
+                    document.getElementById('likebtn').addEventListener('click', likedFunction)
+                    function likedFunction() {
+                        console.log('click');
+                    }
+
+                </script>
 
     </body>
 

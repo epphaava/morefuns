@@ -7,8 +7,8 @@ body{
   display: flex;
   flex-direction: column;
   font-family: 'Noto Serif', serif;
-
 }
+
 
 
 nav {
@@ -26,18 +26,13 @@ nav {
   padding: 10px;
   }
   
-  nav div img {
-  height: 100%;
-  }
-  nav ul{
+ 
+  nav a{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
   }
-  nav li{
-    list-style-type: none;
-    margin-left: 20px;
-  }
+
   nav h1{
     font-size: 2em;
   }
@@ -45,6 +40,7 @@ nav {
   nav p, nav a{
     color: white;
     font-weight: 300;
+    padding: 5px;
   }
 #background{
   display: flex;
@@ -54,11 +50,12 @@ nav {
   justify-content: center;
 }
 
-#posts{
+.index-content, .singlepost-content {
   display: flex;
   background-color: rgb(255, 255, 255);
   padding: 2rem;
   width: 60%;
+  align-self: center;
   align-items: center;
   flex-direction: column;
 }
@@ -111,6 +108,13 @@ a {
   justify-content: space-between;
 }
 
+.thumb img {
+  align-self: flex-start;
+}
+
+.likes {
+  flex: 1 1 auto;
+}
 
 .date {
   float: right;
@@ -128,13 +132,13 @@ a {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
 }
-.thumb img {
+.thumb input {
   width: 10%;
   background-color: #97D2FB;
   border-radius: 50%;
   margin: 3%;
 }
-.thumb img:hover {
+.thumb input:hover {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
 }
 
@@ -142,8 +146,7 @@ a {
   max-width: 400px;
   margin: 0 auto;
 }
-.create-post input,
-.create-post textarea{
+.create-post input, .create-post textarea{
   display: block;
   width: 100%;
   margin: 10px 0;

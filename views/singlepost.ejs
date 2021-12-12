@@ -6,7 +6,7 @@
         <%- include('./partials/nav.ejs') %>
 
 
-            <div class="singlepost content">
+            <div class="singlepost-content">
 
                 <div class="post">
                     <div class=post_header>
@@ -31,7 +31,10 @@
                         <%= posts.post_title %>
                     </div>
                     <div class=thumb>
-                        <img src="https://i.ibb.co/S3M17RH/thumbsup-vol4.png" alt="Thumbs up">
+                        <input id="likebtn" type="image" src="https://i.ibb.co/S3M17RH/thumbsup-vol4.png" alt="Thumbs up">
+                        <p class="likes">
+                            <%= posts.likes %>
+                        </p>
 
                         <a class="delete" data-del="<%=posts.id%>">
                             <button
@@ -53,10 +56,8 @@
                 
                 const delreq = document.querySelector('a.delete');
                 delreq.addEventListener('click', (e) => {
-                    console.log(delreq.dataset.del);
                     const idd = delreq.dataset.del;
                     const endpoint = `/singlepost/${idd}`;
-                    console.log(endpoint)
                     fetch(endpoint, {
                         method: 'DELETE'
                     }).then(window.location.href = '/')
